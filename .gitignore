@@ -1,0 +1,4 @@
+./tpcc-interactive/training/__pycache__/
+./ycsb-interactive/training/__pycache__/
+__pycache__/
+*.pyc
