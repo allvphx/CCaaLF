@@ -30,25 +30,30 @@ This repository contains all the code used for the experiments presented in our 
 
 Our implementation of **CCaaLF**'s critical components can be found in the following files:
 
-- **`learn.h/cc`**: our feature collector and pruner module that captures transaction-related features and refines them for use in the optimization process.
+- **`learn.h/cc`**: our feature collector and feature selector that captures transaction-related features and refines them for use in the optimization process.
 - **`policy.h/cc`**: our in-database cache that supports the loading and storage the optimized agent functions.
 - **`training/cc_optimizer.py`**: our concurrency control algorithm optimizer.
-- **`encoder/*`**: the optimized feature pruning strategies.
+- **`encoder/*`**: the optimized feature selection strategies.
 
 ### Environment
 
 Clone the repository, navigate to the `MAIN_DIR`, and build the environment using the provided Dockerfile:
 ```shell
-docker build -t test-CCaaLF .
+docker build -t ccaalf .
 ```
 
 Run the Docker container and enter the shell:
 ```shell
-docker run -dt --name test_cc test-CCaaLF bash
+docker run -dt --name test_cc ccaalf bash
 docker exec -it test_cc bash
 ```
 
 ### Running Experiments
+
+Enter the experiment dir (take TPCC stored procedure mode for example):
+```shell
+cd tpcc
+```
 
 Inside the Docker container, build the project:
 ```shell
